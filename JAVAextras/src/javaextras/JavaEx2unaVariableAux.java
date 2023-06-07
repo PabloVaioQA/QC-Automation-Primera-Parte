@@ -10,18 +10,18 @@ package javaextras;
  *
  * @author vaiop
  */
-public class JavaEx2cuatroVariables {
+public class JavaEx2unaVariableAux {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-     //usando4variables
+        //una sola variable auxiliar X
         int A = 5;
         int B = 12;
         int C = 15;
         int D = 20;
-        int X,A2,B2,C2,D2;
+        int X;
         
         System.out.println("Lo valores son: " );
         System.out.println("A: " + A);
@@ -29,16 +29,17 @@ public class JavaEx2cuatroVariables {
         System.out.println("C: " + C);
         System.out.println("D: " + D);
         
-        B2 = C;
-        C2 = A;
-        A2 = D;
-        D2 = B;
+        X = B;
+        B = C;
+        C = A;
+        A = D;
+        D = X;
         
-        System.out.println("Lo nuevos valores son: ");
-        System.out.println("A: " + A2);
-        System.out.println("B: " + B2);
-        System.out.println("C: " + C2);
-        System.out.println("D: " + D2);
+        System.out.println("Lo nuevos valores son: " );
+        System.out.println("A: " + A);
+        System.out.println("B: " + B);
+        System.out.println("C: " + C);
+        System.out.println("D: " + D);
     }
     
 }

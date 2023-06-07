@@ -22,17 +22,19 @@ public class JavaEx1{
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         Scanner leer = new Scanner(System.in);
         
         System.out.println("Ingrese la cantidad de minutos: ");
         int minutos = leer.nextInt();
         
-        int dias, horas,totalHoras;
+        int dias, horas, min;
         
-        totalHoras = minutos/60;
+        dias = minutos/(60 * 24);
+        horas = (minutos %(60 * 24))/60;
+        min =(minutos %(60 * 24)) %60;
         
-        dias = totalHoras/24;
-        
+        System.out.println(minutos +" minutos, Son: " + dias +" dias "+ horas +" horas "+ min + " min");
         
         
     }
