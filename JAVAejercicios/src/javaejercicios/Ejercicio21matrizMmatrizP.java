@@ -19,7 +19,7 @@ public class Ejercicio21matrizMmatrizP {
      */
     public static void main(String[] args) {
         
-        //int[][] matrizM = new int[10][10] = {{1,26,36,47,5,6,72,81,95,10},{11,12,13,21,41,22,67,20,10,61},{56,78,87,90,09,90,17,12,87,67},{41,87,24,56,97,74,87,42,64,35},{32,76,79,1,36,5,67,96,12,11},{99,13,54,88,89,90,75,12,41,76},{67,78,87,45,14,22,26,42,56,78},{98,45,34,23,32,56,74,16,19,18},{24,67,97,46,87,13,67,89,93,24},{21,68,78,98,90,67,12,41,65,12}};
+        //int[][] matrizM = {{1,26,36,47,5,6,72,81,95,10},{11,12,13,21,41,22,67,20,10,61},{56,78,87,90,09,90,17,12,87,67},{41,87,24,56,97,74,87,42,64,35},{32,76,79,1,36,5,67,96,12,11},{99,13,54,88,89,90,75,12,41,76},{67,78,87,45,14,22,26,42,56,78},{98,45,34,23,32,56,74,16,19,18},{24,67,97,46,87,13,67,89,93,24},{21,68,78,98,90,67,12,41,65,12}};
         int[][] matrizM = {{0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,0},{0,0,0,0,36,5,67,0,0,0},{0,0,0,0,89,90,75,0,0,0},{0,0,0,0,14,22,26,0,0,0},{0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,0}};
         int[][] matrizP = {{36,5,67},{89,90,75},{14,22,26}};
         
@@ -42,6 +42,7 @@ public class Ejercicio21matrizMmatrizP {
         
         
         //Buscar coordenada de coincidencia
+        boolean validacion = false;
         for (int i = 0; i <= 7 ; i++) {
             
             for (int j = 0; j <= 7; j++) {
@@ -50,53 +51,23 @@ public class Ejercicio21matrizMmatrizP {
                     System.out.println("Coordenadas: i: " + i+" j: "+ j);
                     int x = i;
                     int y = j;
-                    //validarMatriz(x,y,matrizM,matrizP);
-                    
-                    
+                    //Nueva validacion
+                    for (int k = 0; k < 2; k++) {
+                        for (int l = 0; l < 2; l++) {
+                            validacion = matrizM[x+k][y+l] == matrizP[k][l];
+                            if (!validacion) break;
+                        }
+                        if (!validacion) break;
+                    } 
                 }     
             }
         }
+        if(validacion == true){
+            System.out.println("La matriz P se encuentra dentro de la Matriz M");
+        }else{ System.out.println("Matriz P no encontrada");}
         
-        //Validar coincidencia matrizM y MatrizP
-        /*
-        for (int i = 0; i <= 2; i++) {
-            for (int j = 0; j <= 2; j++) {
-                if(matrizM[i + x][j + y] = matrizP[i][j]){
-                    boolean validar = verdadero;
-                    
-                }   
-            }
-        }
-*/
-        validarMatriz(x,y,matrizM,matrizP);
-        if(validar){
-            System.out.println("La matrizP esta contenida dentro de la MatrizM! En las coordenadas"+ x +y);  
-        }else{
-            System.out.println("La matrizP NO esta");
-        }
-    }
         
-    
-    
-    //Validar MatrizM con MatrizP   
-    public static boolean validarMatriz(int x,int y,int[][] matrizM, int[][] matrizP){
-    boolean validar = false;
-        for (int i = 0; i <= 2; i++) {
-            for (int j = 0; j <= 2; j++) {
-                if(matrizM[i + x][j + y] == matrizP[i][j]){
-                    boolean validar = true;
-                    
-                }   
-            }
-        }
-            
-    
-    
-    
-    
+        
+    }    
+}    
  
-    
-    
-
-    }
-}

@@ -14,7 +14,7 @@ public class JavaEx12contador3digitos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int num = 000;
+        
         int num1 =0;
         int num2 =0;
         int num3 =0;
