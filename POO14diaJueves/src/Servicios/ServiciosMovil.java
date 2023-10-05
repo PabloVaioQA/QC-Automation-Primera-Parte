@@ -23,7 +23,7 @@ public Movil cargarMovil(){
     movil.setMarca(leer.nextLine());
     System.out.println("Ingrese el Modelo: ");
     movil.setModelo(leer.nextLine());
-
+    return movil;
 
 }
-}
+
